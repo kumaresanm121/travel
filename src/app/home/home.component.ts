@@ -10,9 +10,9 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  carbook ={   checkin:new Date(Date.now()).toLocaleString('en-US'),checkout:new Date(Date.now()).toLocaleString('en-US'),
-    start:String,end:String,duration:1,contact:String,
-    email:String,members:2,child:Number,adult:Number,name:String,package:String}
+  carbook ={   checkin:new Date(Date.now()).toLocaleDateString(),checkout:new Date(Date.now()).toLocaleDateString(),
+    start:null,end:null,contact:null,
+    email:null,child:0,adult:0,name:String,package:String}
   submitbooking(){
     console.log(this.carbook);
   }
