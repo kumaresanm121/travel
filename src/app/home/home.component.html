@@ -6,7 +6,7 @@
                 <div class="col-sm-12">
                     <div class="single-about-us">
                         <div class="about-us-txt">
-                            <!-- <h2 class="animated fadeInUp" style="opacity: 0;">
+                            <h2 class="animated fadeInUp" style="opacity: 0;">
                                 Explore the Beauty of the Beautiful World
 
                             </h2>
@@ -14,7 +14,7 @@
                                 <button class="about-view animated fadeInDown" style="opacity: 0;">
                                   explore now
                               </button>
-                            </div> -->
+                            </div>
                             <!--/.about-btn-->
                         </div>
                         <!--/.about-us-txt-->
@@ -46,14 +46,19 @@
                     <div id="desc-tabs" class="desc-tabs">
 
                         <ul class="nav nav-tabs" role="tablist">
-
-                            <li role="presentation" class="active">
-                                <a href="#tours" aria-controls="tours" role="tab" data-toggle="tab">
+                            <li role="presentation" [ngClass]="{active:isActive==1}" (click)="isActive=1">
+                                <a href="#cars" aria-controls="cars" role="tab" data-toggle="tab">
                                     <i class="fa fa-car"></i> Car
                                 </a>
                             </li>
 
-                            <li role="presentation">
+                            <li role="presentation" [ngClass]="{active:isActive==2}" (click)="isActive=2">
+                                <a href="#tours" aria-controls="tours" role="tab" data-toggle="tab">
+                                    <i class="fa fa-car"></i> Tours
+                                </a>
+                            </li>
+
+                            <!-- <li role="presentation">
                                 <a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">
                                     <i class="fa fa-building"></i> hotels
                                 </a>
@@ -63,13 +68,13 @@
                                 <a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">
                                     <i class="fa fa-plane"></i> flights
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">
 
-                            <div role="tabpanel" class="tab-pane active fade in" id="tours">
+                            <div role="tabpanel" class="tab-pane active fade in" id="cars">
                                 <div class="tab-para">
 
                                     <div class="row">
@@ -82,37 +87,31 @@
                                                     <div class="travel-select-icon">
                                                         <select class="form-control " name="start" [(ngModel)]="carbook.start" placeholder="From">
 
-                                                            <option value=null>Enter city</option><!-- /.option-->
+                                                            <option value=null>Enter your location</option>
 
-                                                            <option value="turkey">turkey</option><!-- /.option-->
+                                                            <option value="turkey">turkey</option>
 
-                                                            <option value="russia">russia</option><!-- /.option-->
-                                                            <option value="egept">egypt</option><!-- /.option-->
+                                                            <option value="russia">russia</option>
+                                                            <option value="egept">egypt</option>
 
                                                       </select>
-                                                        <!-- /.select-->
                                                     </div>
-                                                    <!-- /.travel-select-icon -->
                                                     <h2>To</h2>
                                                     <div class="travel-select-icon">
                                                         <select class="form-control " name="end" [(ngModel)]="carbook.end" placeholder="To">
 
-                                                            <option value=null>Enter city</option><!-- /.option-->
+                                                            <option value=null>Enter your destination location</option>
 
-                                                            <option value="istambul">istambul</option><!-- /.option-->
+                                                            <option value="istambul">istambul</option>
 
-                                                            <option value="mosko">mosko</option><!-- /.option-->
-                                                            <option value="cairo">cairo</option><!-- /.option-->
+                                                            <option value="mosko">mosko</option>
+                                                            <option value="cairo">cairo</option>
 
                                                       </select>
-                                                        <!-- /.select-->
                                                     </div>
-                                                    <!-- /.travel-select-icon -->
 
                                                 </div>
-                                                <!--/.single-tab-select-box-->
                                             </div>
-                                            <!--/.col-->
 
                                             <div class="col-lg-2 col-md-3 col-sm-4">
                                                 <div class="single-tab-select-box">
@@ -122,29 +121,15 @@
                                                         <input type="text" name="checkin" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkin">
 
                                                     </div>
-                                                    <!-- /.travel-check-icon -->
                                                 </div>
                                                 <div class="single-tab-select-box">
-                                                    <h2>duration</h2>
+                                                    <h2>Adults</h2>
                                                     <div class="travel-check-number">
                                                         <input class="form-control" type="number" name="adult" [(ngModel)]="carbook.adult" placeholder="Number of adults">
-                                                        <!-- <select class="form-control " [(ngModel)]="carbook.duration" placeholder="Duration">
 
-                                                            <option value="5" >5</option>
-
-                                                            <option value="10">10</option>
-
-                                                            <option value="15">15</option>
-                                                            <option value="20">20</option>
-
-                                                      </select> -->
-                                                        <!-- /.select-->
                                                     </div>
-                                                    <!-- /.travel-select-icon -->
                                                 </div>
-                                                <!--/.single-tab-select-box-->
                                             </div>
-                                            <!--/.col-->
 
                                             <div class="col-lg-2 col-md-3 col-sm-4">
                                                 <div class="single-tab-select-box">
@@ -154,20 +139,15 @@
                                                             <input type="text" name="checkout" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkout">
                                                         </form>
                                                     </div>
-                                                    <!-- /.travel-check-icon -->
                                                 </div>
                                                 <div class="single-tab-select-box">
-                                                    <h2>members</h2>
+                                                    <h2>Childs</h2>
                                                     <div class="travel-check-number">
                                                         <input class="form-control" type="number" name="child" [(ngModel)]="carbook.child" placeholder="Number of childs">
 
-                                                        <!-- /.select-->
                                                     </div>
-                                                    <!-- /.travel-select-icon -->
                                                 </div>
-                                                <!--/.single-tab-select-box-->
                                             </div>
-                                            <!--/.col-->
 
                                             <div class="col-lg-4 col-md-4 col-sm-12">
 
@@ -183,49 +163,155 @@
                                                     <div class="travel-check-number" style="margin-bottom:20px;">
                                                         <input type="text" class="form-control" name="number" [(ngModel)]="carbook.contact" placeholder="Contact Number">
 
-                                                        <!-- /.select-->
                                                     </div>
-                                                    <!-- /.travel-select-icon -->
                                                 </div>
-                                                <!--/.single-tab-select-box-->
                                             </div>
-                                            <!--/.col-->
 
-                                            <!-- <div class="col-lg-2 col-md-1 col-sm-4">
 
-                                            </div> -->
-                                            <!--/.col-->
                                         </form>
                                     </div>
-                                    <!--/.row-->
 
                                     <div class="row">
-                                        <div class="col-sm-5">
-                                            <div class="travel-budget">
-
+                                        <div class="col-sm-4">
+                                            <div class="single-tab-select-box">
+                                                <div class="travel-check-number" style="margin-bottom: 20px;">
+                                                    <input type="text" class="form-control" name="name" [(ngModel)]="carbook.name" placeholder="Enter your name">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="clo-sm-7">
+                                        <div class="clo-sm-8">
                                             <div class="about-btn travel-mrt-0 pull-right">
                                                 <button class="about-view travel-btn" (click)="submitbooking()">
                                                       Submit	
                                                   </button>
-                                                <!--/.travel-btn-->
                                             </div>
-                                            <!--/.about-btn-->
                                         </div>
-                                        <!--/.col-->
 
                                     </div>
-                                    <!--/.row-->
 
                                 </div>
-                                <!--/.tab-para-->
 
                             </div>
-                            <!--/.tabpannel-->
+                            <div role="tabpanel" class="tab-pane  fade in" id="tours">
+                                <div class="tab-para">
 
-                            <div role="tabpanel" class="tab-pane fade in" id="hotels">
+                                    <div class="row">
+                                        <form>
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="single-tab-select-box">
+
+                                                    <h2>From</h2>
+
+                                                    <div class="travel-select-icon">
+                                                        <select class="form-control " name="start" [(ngModel)]="carbook.start" placeholder="From">
+
+                                                            <option value=null>Enter your location</option>
+
+                                                            <option value="turkey">turkey</option>
+
+                                                            <option value="russia">russia</option>
+                                                            <option value="egept">egypt</option>
+
+                                                      </select>
+                                                    </div>
+                                                    <h2>To</h2>
+                                                    <div class="travel-select-icon">
+                                                        <select class="form-control " name="end" [(ngModel)]="carbook.end" placeholder="To">
+
+                                                            <option value=null>Enter your destination location</option>
+
+                                                            <option value="istambul">istambul</option>
+
+                                                            <option value="mosko">mosko</option>
+                                                            <option value="cairo">cairo</option>
+
+                                                      </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-2 col-md-3 col-sm-4">
+                                                <div class="single-tab-select-box">
+                                                    <h2>Start Date</h2>
+                                                    <div class="travel-check-icon">
+
+                                                        <input type="text" name="checkin" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkin">
+
+                                                    </div>
+                                                </div>
+                                                <div class="single-tab-select-box">
+                                                    <h2>Adults</h2>
+                                                    <div class="travel-check-number">
+                                                        <input class="form-control" type="number" name="adult" [(ngModel)]="carbook.adult" placeholder="Number of adults">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-2 col-md-3 col-sm-4">
+                                                <div class="single-tab-select-box">
+                                                    <h2>End Date</h2>
+                                                    <div class="travel-check-icon">
+                                                        <form action="#">
+                                                            <input type="text" name="checkout" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkout">
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="single-tab-select-box">
+                                                    <h2>Childs</h2>
+                                                    <div class="travel-check-number">
+                                                        <input class="form-control" type="number" name="child" [(ngModel)]="carbook.child" placeholder="Number of childs">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+
+                                                <div class="single-tab-select-box">
+                                                    <h2>Email</h2>
+                                                    <div class="travel-check-number" style="margin-bottom: 20px;">
+                                                        <input type="text" class="form-control" name="email" [(ngModel)]="carbook.email" placeholder="Email">
+                                                    </div>
+                                                </div>
+
+                                                <div class="single-tab-select-box">
+                                                    <h2>Contact Number</h2>
+                                                    <div class="travel-check-number" style="margin-bottom:20px;">
+                                                        <input type="text" class="form-control" name="number" [(ngModel)]="carbook.contact" placeholder="Contact Number">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </form>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="single-tab-select-box">
+                                                <div class="travel-check-number" style="margin-bottom: 20px;">
+                                                    <input type="text" class="form-control" name="name" [(ngModel)]="carbook.name" placeholder="Enter your name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clo-sm-8">
+                                            <div class="about-btn travel-mrt-0 pull-right">
+                                                <button class="about-view travel-btn" (click)="submitbooking()">
+                                                      Submit	
+                                                  </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- <div role="tabpanel" class="tab-pane fade in" id="hotels">
                                 <div class="tab-para">
 
                                     <div class="row">
@@ -237,37 +323,34 @@
                                                 <div class="travel-select-icon">
                                                     <select class="form-control ">
 
-                                                            <option value="default">enter your destination country</option><!-- /.option-->
+                                                            <option value="default">enter your destination country</option>
 
-                                                            <option value="turkey">turkey</option><!-- /.option-->
+                                                            <option value="turkey">turkey</option>
 
-                                                            <option value="russia">russia</option><!-- /.option-->
-                                                            <option value="egept">egypt</option><!-- /.option-->
+                                                            <option value="russia">russia</option>
+                                                            <option value="egept">egypt</option>
 
                                                       </select>
-                                                    <!-- /.select-->
+                                                   
                                                 </div>
-                                                <!-- /.travel-select-icon -->
 
                                                 <div class="travel-select-icon">
                                                     <select class="form-control ">
 
-                                                            <option value="default">enter your destination location</option><!-- /.option-->
+                                                            <option value="default">enter your destination location</option>
 
-                                                            <option value="istambul">istambul</option><!-- /.option-->
+                                                            <option value="istambul">istambul</option>
 
-                                                            <option value="mosko">mosko</option><!-- /.option-->
-                                                            <option value="cairo">cairo</option><!-- /.option-->
+                                                            <option value="mosko">mosko</option>
+                                                            <option value="cairo">cairo</option>
 
                                                       </select>
-                                                    <!-- /.select-->
+                                                   
                                                 </div>
-                                                <!-- /.travel-select-icon -->
+                                                
 
                                             </div>
-                                            <!--/.single-tab-select-box-->
                                         </div>
-                                        <!--/.col-->
 
                                         <div class="col-lg-2 col-md-3 col-sm-4">
                                             <div class="single-tab-select-box">
@@ -277,11 +360,8 @@
                                                         <input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
                                                     </form>
                                                 </div>
-                                                <!-- /.travel-check-icon -->
                                             </div>
-                                            <!--/.single-tab-select-box-->
                                         </div>
-                                        <!--/.col-->
 
                                         <div class="col-lg-2 col-md-3 col-sm-4">
                                             <div class="single-tab-select-box">
@@ -291,11 +371,8 @@
                                                         <input type="text" name="check_out" class="form-control" data-toggle="datepicker" placeholder="22 -01 - 2017 ">
                                                     </form>
                                                 </div>
-                                                <!-- /.travel-check-icon -->
                                             </div>
-                                            <!--/.single-tab-select-box-->
                                         </div>
-                                        <!--/.col-->
 
                                         <div class="col-lg-2 col-md-1 col-sm-4">
                                             <div class="single-tab-select-box">
@@ -303,21 +380,17 @@
                                                 <div class="travel-select-icon">
                                                     <select class="form-control ">
 
-                                                            <option value="default">5</option><!-- /.option-->
+                                                            <option value="default">5</option>
 
-                                                            <option value="10">10</option><!-- /.option-->
+                                                            <option value="10">10</option>
 
-                                                            <option value="15">15</option><!-- /.option-->
-                                                            <option value="20">20</option><!-- /.option-->
+                                                            <option value="15">15</option>
+                                                            <option value="20">20</option>
 
                                                       </select>
-                                                    <!-- /.select-->
                                                 </div>
-                                                <!-- /.travel-select-icon -->
                                             </div>
-                                            <!--/.single-tab-select-box-->
                                         </div>
-                                        <!--/.col-->
 
                                         <div class="col-lg-2 col-md-1 col-sm-4">
                                             <div class="single-tab-select-box">
@@ -325,47 +398,35 @@
                                                 <div class="travel-select-icon">
                                                     <select class="form-control ">
 
-                                                            <option value="default">1</option><!-- /.option-->
+                                                            <option value="default">1</option>
 
-                                                            <option value="2">2</option><!-- /.option-->
+                                                            <option value="2">2</option>
 
-                                                            <option value="4">4</option><!-- /.option-->
-                                                            <option value="8">8</option><!-- /.option-->
+                                                            <option value="4">4</option>
+                                                            <option value="8">8</option>
 
                                                       </select>
-                                                    <!-- /.select-->
                                                 </div>
-                                                <!-- /.travel-select-icon -->
                                             </div>
-                                            <!--/.single-tab-select-box-->
                                         </div>
-                                        <!--/.col-->
 
                                     </div>
-                                    <!--/.row-->
 
                                     <div class="row">
                                         <div class="col-sm-5"></div>
-                                        <!--/.col-->
                                         <div class="clo-sm-7">
                                             <div class="about-btn travel-mrt-0 pull-right">
                                                 <button class="about-view travel-btn">
                                                       search	
                                                   </button>
-                                                <!--/.travel-btn-->
                                             </div>
-                                            <!--/.about-btn-->
                                         </div>
-                                        <!--/.col-->
 
                                     </div>
-                                    <!--/.row-->
 
                                 </div>
-                                <!--/.tab-para-->
 
-                            </div>
-                            <!--/.tabpannel-->
+                            </div> -->
 
                             <div role="tabpanel" class="tab-pane fade in" id="flights">
                                 <div class="tab-para">
