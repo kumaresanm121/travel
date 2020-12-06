@@ -336,7 +336,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    /* background: url(../../assets/images/home/banner.jpg)no-repeat; */
+    //background-image: url(../../assets/images/logo/sd2org.png);
     background-size: cover;
     background-position: center;
     min-height: 1000px;
@@ -558,6 +558,14 @@ body {
 
 .travel-select-icon select,
 .travel-check-icon input {
+    color: #aaa;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    height: 48px;
+}
+
+.travel-check-number input {
     color: #aaa;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
