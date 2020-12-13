@@ -1,3 +1,12 @@
+<style>
+    .nav-tabs>li.active>a {
+        color: #555;
+        cursor: default;
+        background-color: #fff;
+        /* border: 1px solid #ddd; */
+        border-bottom-color: transparent;
+    }
+</style>
 <section id="home" class="about-us" style="height: 60%; ">
     <div class="container" style="background-image: url(../../assets/images/logo/sd2org.png);
     background-size: cover;">
@@ -46,15 +55,15 @@
                     <div id="desc-tabs" class="desc-tabs">
 
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" [ngClass]="{active:isActive==1}" (click)="isActive=1">
+                            <li role="presentation" class="active">
                                 <a href="#cars" aria-controls="cars" role="tab" data-toggle="tab">
                                     <i class="fa fa-car"></i> Car
                                 </a>
                             </li>
 
-                            <li role="presentation" [ngClass]="{active:isActive==2}" (click)="isActive=2">
+                            <li role="presentation">
                                 <a href="#tours" aria-controls="tours" role="tab" data-toggle="tab">
-                                    <i class="fa fa-car"></i> Tours
+                                    <i class="fa fa-tree"></i> Tours
                                 </a>
                             </li>
 
@@ -76,236 +85,213 @@
 
                             <div role="tabpanel" class="tab-pane active fade in" id="cars">
                                 <div class="tab-para">
-
-                                    <div class="row">
-                                        <form>
+                                    <form>
+                                        <div class="row">
                                             <div class="col-lg-4 col-md-4 col-sm-12">
                                                 <div class="single-tab-select-box">
+                                                    <h2>Name</h2>
+                                                    <div class="travel-check-number" style="margin-bottom: 20px;">
+                                                        <input type="text" class="form-control" name="name" [(ngModel)]="carbook.name" placeholder="Enter your name">
+                                                    </div>
+                                                    <!-- <div class="single-tab-select-box"> -->
+                                                    <h2>Email</h2>
+                                                    <div class="travel-check-number" style="margin-bottom: 20px;">
+                                                        <input type="text" class="form-control" name="email" [(ngModel)]="carbook.email" placeholder="Enter your email">
+                                                    </div>
+                                                    <h2>Contact Number</h2>
+                                                    <div class="travel-check-number" style="margin-bottom:20px;">
+                                                        <input type="text" class="form-control" name="number" [(ngModel)]="carbook.contact" placeholder="Enter your contact number">
 
+                                                    </div>
+                                                    <!-- </div> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-sm-12 single-tab-select-box">
                                                     <h2>From</h2>
-
                                                     <div class="travel-select-icon">
                                                         <select class="form-control " name="start" [(ngModel)]="carbook.start" placeholder="From">
 
                                                             <option value=null>Enter your location</option>
 
-                                                            <option value="turkey">turkey</option>
-
-                                                            <option value="russia">russia</option>
-                                                            <option value="egept">egypt</option>
+                                                            <option value="{{city.name}}" *ngFor="let city of cityfrom; index as i;">{{city.name}}</option>
 
                                                       </select>
                                                     </div>
+                                                </div>
+                                                <div class="col-sm-6 single-tab-select-box">
+                                                    <h2>Start Date</h2>
+                                                    <div class="travel-check-icon">
+                                                        <input type="text" name="checkin" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkin">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 single-tab-select-box">
+                                                    <h2>End Date</h2>
+                                                    <div class=" travel-check-icon">
+                                                        <form action="#">
+                                                            <input type="text" name="checkout" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkout">
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-sm-12 single-tab-select-box">
                                                     <h2>To</h2>
                                                     <div class="travel-select-icon">
                                                         <select class="form-control " name="end" [(ngModel)]="carbook.end" placeholder="To">
 
                                                             <option value=null>Enter your destination location</option>
 
-                                                            <option value="istambul">istambul</option>
-
-                                                            <option value="mosko">mosko</option>
-                                                            <option value="cairo">cairo</option>
+                                                            <option value="{{city.name}}" *ngFor="let city of cityfrom; index as i;">{{city.name}}</option>
 
                                                       </select>
                                                     </div>
-
                                                 </div>
-                                            </div>
-
-                                            <div class="col-lg-2 col-md-3 col-sm-4">
-                                                <div class="single-tab-select-box">
-                                                    <h2>Start Date</h2>
-                                                    <div class="travel-check-icon">
-
-                                                        <input type="text" name="checkin" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkin">
-
-                                                    </div>
-                                                </div>
-                                                <div class="single-tab-select-box">
-                                                    <h2>Adults</h2>
-                                                    <div class="travel-check-number">
-                                                        <input class="form-control" type="number" name="adult" [(ngModel)]="carbook.adult" placeholder="Number of adults">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-2 col-md-3 col-sm-4">
-                                                <div class="single-tab-select-box">
-                                                    <h2>End Date</h2>
-                                                    <div class="travel-check-icon">
-                                                        <form action="#">
-                                                            <input type="text" name="checkout" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkout">
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <div class="single-tab-select-box">
+                                                <div class="col-sm-6 single-tab-select-box">
                                                     <h2>Childs</h2>
                                                     <div class="travel-check-number">
                                                         <input class="form-control" type="number" name="child" [(ngModel)]="carbook.child" placeholder="Number of childs">
 
                                                     </div>
                                                 </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-4 col-sm-12">
-
-                                                <div class="single-tab-select-box">
-                                                    <h2>Email</h2>
-                                                    <div class="travel-check-number" style="margin-bottom: 20px;">
-                                                        <input type="text" class="form-control" name="email" [(ngModel)]="carbook.email" placeholder="Email">
+                                                <div class="col-sm-6 single-tab-select-box">
+                                                    <h2>Adults</h2>
+                                                    <div class="travel-check-number">
+                                                        <input class="form-control" type="number" name="adult" [(ngModel)]="carbook.adult" placeholder="Number of adults">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 single-tab-select-box" style="padding:0;">
+                                                    <div class="travel-check-number about-btn travel-mrt-0 pull-right" style="margin-top: 15%;">
+                                                        <button class="about-view travel-btn" (click)="submitbooking()">
+                                                              Submit	
+                                                          </button>
                                                     </div>
                                                 </div>
 
-                                                <div class="single-tab-select-box">
-                                                    <h2>Contact Number</h2>
-                                                    <div class="travel-check-number" style="margin-bottom:20px;">
-                                                        <input type="text" class="form-control" name="number" [(ngModel)]="carbook.contact" placeholder="Contact Number">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </form>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="single-tab-select-box">
-                                                <div class="travel-check-number" style="margin-bottom: 20px;">
-                                                    <input type="text" class="form-control" name="name" [(ngModel)]="carbook.name" placeholder="Enter your name">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="clo-sm-8">
-                                            <div class="about-btn travel-mrt-0 pull-right">
-                                                <button class="about-view travel-btn" (click)="submitbooking()">
-                                                      Submit	
-                                                  </button>
                                             </div>
                                         </div>
 
-                                    </div>
 
+                                    </form>
                                 </div>
 
                             </div>
                             <div role="tabpanel" class="tab-pane  fade in" id="tours">
                                 <div class="tab-para">
-
                                     <div class="row">
                                         <form>
+
                                             <div class="col-lg-4 col-md-4 col-sm-12">
                                                 <div class="single-tab-select-box">
-
-                                                    <h2>From</h2>
-
+                                                    <h2>Package Type</h2>
                                                     <div class="travel-select-icon">
-                                                        <select class="form-control " name="start" [(ngModel)]="carbook.start" placeholder="From">
+                                                        <select class="form-control " name="package" [(ngModel)]="tour.package" (ngModelChange)="packagefn(tour.package)" placeholder="From">
+
+                                                            <option value=null>Select your package</option>
+
+                                                            <option value="domestic">Domestic</option>
+
+                                                            <option value="international">International</option>
+                                                            <option value="custom">Custom</option>
+
+                                                      </select>
+                                                    </div>
+                                                    <h2>Name</h2>
+                                                    <div class="travel-check-number" style="margin-bottom: 20px;">
+                                                        <input type="text" class="form-control" name="name" [(ngModel)]="tour.name" placeholder="Enter your name">
+                                                    </div>
+                                                    <h2>Email</h2>
+                                                    <div class="travel-check-number" style="margin-bottom: 20px;">
+                                                        <input type="text" class="form-control" name="email" [(ngModel)]="tour.email" placeholder="ENter your email">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-sm-12 single-tab-select-box" *ngIf="tour.package=='custom'">
+                                                    <h2>From</h2>
+                                                    <div class="travel-check-number" style="margin-bottom: 20px;">
+                                                        <input type="text" class="form-control" name="start" [(ngModel)]="tour.start" placeholder="Enter your Location">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 single-tab-select-box" *ngIf="tour.package!='custom'">
+                                                    <h2>From</h2>
+                                                    <div class="travel-select-icon">
+                                                        <select class="form-control" name="start" [(ngModel)]="tour.start" placeholder="From">
 
                                                             <option value=null>Enter your location</option>
 
-                                                            <option value="turkey">turkey</option>
-
-                                                            <option value="russia">russia</option>
-                                                            <option value="egept">egypt</option>
-
+                                                            <option value="{{city.name}}" *ngFor="let city of cityfrom; index as i;">{{city.name}}</option>
                                                       </select>
                                                     </div>
-                                                    <h2>To</h2>
-                                                    <div class="travel-select-icon">
-                                                        <select class="form-control " name="end" [(ngModel)]="carbook.end" placeholder="To">
-
-                                                            <option value=null>Enter your destination location</option>
-
-                                                            <option value="istambul">istambul</option>
-
-                                                            <option value="mosko">mosko</option>
-                                                            <option value="cairo">cairo</option>
-
-                                                      </select>
-                                                    </div>
-
                                                 </div>
-                                            </div>
-
-                                            <div class="col-lg-2 col-md-3 col-sm-4">
-                                                <div class="single-tab-select-box">
+                                                <div class="col-sm-6 single-tab-select-box">
                                                     <h2>Start Date</h2>
                                                     <div class="travel-check-icon">
-
-                                                        <input type="text" name="checkin" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkin">
-
+                                                        <input type="text" name="checkin" class="form-control" data-toggle="datepicker" [(ngModel)]="tour.checkin">
                                                     </div>
                                                 </div>
-                                                <div class="single-tab-select-box">
-                                                    <h2>Adults</h2>
-                                                    <div class="travel-check-number">
-                                                        <input class="form-control" type="number" name="adult" [(ngModel)]="carbook.adult" placeholder="Number of adults">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-2 col-md-3 col-sm-4">
-                                                <div class="single-tab-select-box">
+                                                <div class="col-sm-6 single-tab-select-box">
                                                     <h2>End Date</h2>
-                                                    <div class="travel-check-icon">
+                                                    <div class=" travel-check-icon">
                                                         <form action="#">
-                                                            <input type="text" name="checkout" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkout">
+                                                            <input type="text" name="checkout" class="form-control" data-toggle="datepicker" [(ngModel)]="tour.checkout">
                                                         </form>
                                                     </div>
                                                 </div>
-                                                <div class="single-tab-select-box">
+                                                <div class="col-sm-12 single-tab-select-box">
+                                                    <h2>Contact Number</h2>
+                                                    <div class="travel-check-number" style="margin-bottom: 20px;">
+                                                        <input type="text" class="form-control" name="contact" [(ngModel)]="tour.contact" placeholder="Enter your contact number">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-sm-12 single-tab-select-box" *ngIf="tour.package=='custom'">
+                                                    <h2>To</h2>
+                                                    <div class="travel-check-number" style="margin-bottom: 20px;">
+                                                        <input type="text" class="form-control" name="end" [(ngModel)]="tour.end" placeholder="Enter your destination Location">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 single-tab-select-box" *ngIf="tour.package!='custom'">
+                                                    <h2>To</h2>
+                                                    <div class="travel-select-icon">
+                                                        <select class="form-control " name="end" [(ngModel)]="tour.end" placeholder="To">
+
+                                                            <option value=null>Enter your destination location</option>
+
+                                                            <option value="{{city.name}}" *ngFor="let city of cityto; index as i;">{{city.name}}</option>
+
+                                                      </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 single-tab-select-box">
                                                     <h2>Childs</h2>
                                                     <div class="travel-check-number">
-                                                        <input class="form-control" type="number" name="child" [(ngModel)]="carbook.child" placeholder="Number of childs">
+                                                        <input class="form-control" type="number" name="child" [(ngModel)]="tour.child" placeholder="Number of childs">
 
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 single-tab-select-box">
+                                                    <h2>Adults</h2>
+                                                    <div class="travel-check-number">
+                                                        <input class="form-control" type="number" name="adult" [(ngModel)]="tour.adult" placeholder="Number of adults">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 single-tab-select-box" style="padding:0;">
+                                                    <div class="travel-check-number about-btn travel-mrt-0 pull-right" style="margin-top: 15%;">
+                                                        <button class="about-view travel-btn" (click)="submitbooking()">
+                                                              Submit	
+                                                          </button>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="col-lg-4 col-md-4 col-sm-12">
-
-                                                <div class="single-tab-select-box">
-                                                    <h2>Email</h2>
-                                                    <div class="travel-check-number" style="margin-bottom: 20px;">
-                                                        <input type="text" class="form-control" name="email" [(ngModel)]="carbook.email" placeholder="Email">
-                                                    </div>
-                                                </div>
-
-                                                <div class="single-tab-select-box">
-                                                    <h2>Contact Number</h2>
-                                                    <div class="travel-check-number" style="margin-bottom:20px;">
-                                                        <input type="text" class="form-control" name="number" [(ngModel)]="carbook.contact" placeholder="Contact Number">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
                                         </form>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="single-tab-select-box">
-                                                <div class="travel-check-number" style="margin-bottom: 20px;">
-                                                    <input type="text" class="form-control" name="name" [(ngModel)]="carbook.name" placeholder="Enter your name">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="clo-sm-8">
-                                            <div class="about-btn travel-mrt-0 pull-right">
-                                                <button class="about-view travel-btn" (click)="submitbooking()">
-                                                      Submit	
-                                                  </button>
-                                            </div>
-                                        </div>
 
                                     </div>
+
+
 
                                 </div>
 
