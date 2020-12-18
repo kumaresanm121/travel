@@ -17,10 +17,10 @@
 
                             <div class="col-md-6">
                                 <div class="filtr-item">
-                                    <img src="./assets/images/gallary/g1.jpg" alt="portfolio image">
-                                    <div class="item-title">
-                                        <a href="#">
-                                          china
+                                    <img src="./assets/images/gallary/topdest/hampi_570_320.png" alt="portfolio image">
+                                    <div class="item-title " style="cursor: pointer;" data-toggle="modal" data-target="#enquiry" (click)="enquirydata.name = 'Hampi'">
+                                        <a>
+                                          hampi
                                       </a>
                                         <p><span>20 tours</span><span>15 places</span></p>
                                     </div>
@@ -32,10 +32,10 @@
 
                             <div class="col-md-6">
                                 <div class="filtr-item">
-                                    <img src="./assets/images/gallary/g2.jpg" alt="portfolio image">
-                                    <div class="item-title">
-                                        <a href="#">
-                                          venuzuala
+                                    <img src="./assets/images/gallary/topdest/Prague_570_320.png" alt="portfolio image">
+                                    <div class="item-title " style="cursor: pointer;" data-toggle="modal" data-target="#enquiry" (click)="enquirydata.name = 'Prague'">
+                                        <a>
+                                          prague
                                       </a>
                                         <p><span>12 tours</span><span>9 places</span></p>
                                     </div>
@@ -47,10 +47,10 @@
 
                             <div class="col-md-4">
                                 <div class="filtr-item">
-                                    <img src="./assets/images/gallary/g3.jpg" alt="portfolio image">
-                                    <div class="item-title">
-                                        <a href="#">
-                                          brazil
+                                    <img src="./assets/images/gallary/topdest/Dubai_370_670.png" alt="portfolio image">
+                                    <div class="item-title " style="cursor: pointer;" data-toggle="modal" data-target="#enquiry" (click)="enquirydata.name = 'Dubai'">
+                                        <a>
+                                          dubai
                                       </a>
                                         <p><span>25 tours</span><span>10 places</span></p>
                                     </div>
@@ -62,10 +62,10 @@
 
                             <div class="col-md-4">
                                 <div class="filtr-item">
-                                    <img src="./assets/images/gallary/g4.jpg" alt="portfolio image">
-                                    <div class="item-title">
-                                        <a href="#">
-                                          australia 
+                                    <img src="./assets/images/gallary/topdest/Shimla_370_320.png" alt="portfolio image">
+                                    <div class="item-title " style="cursor: pointer;" data-toggle="modal" data-target="#enquiry" (click)="enquirydata.name = 'Shimla'">
+                                        <a>
+                                          shimla 
                                       </a>
                                         <p><span>18 tours</span><span>9 places</span></p>
                                     </div>
@@ -77,10 +77,10 @@
 
                             <div class="col-md-4">
                                 <div class="filtr-item">
-                                    <img src="./assets/images/gallary/g5.jpg" alt="portfolio image">
-                                    <div class="item-title">
-                                        <a href="#">
-                                          netharland
+                                    <img src="./assets/images/gallary/topdest/Manali_370_320.png" alt="portfolio image">
+                                    <div class="item-title " style="cursor: pointer;" data-toggle="modal" data-target="#enquiry" (click)="enquirydata.name = 'Manali'">
+                                        <a href="">
+                                          manali
                                       </a>
                                         <p><span>14 tours</span><span>12 places</span></p>
                                     </div>
@@ -92,10 +92,10 @@
 
                             <div class="col-md-8">
                                 <div class="filtr-item">
-                                    <img src="./assets/images/gallary/g6.jpg" alt="portfolio image">
-                                    <div class="item-title">
-                                        <a href="#">
-                                          turkey
+                                    <img src="./assets/images/gallary/topdest/goa_770_320.png" alt="portfolio image">
+                                    <div class="item-title " style="cursor: pointer;" data-toggle="modal" data-target="#enquiry" (click)="enquirydata.name = 'Goa'">
+                                        <a>
+                                          goa
                                       </a>
                                         <p><span>14 tours</span><span>6 places</span></p>
                                     </div>
@@ -120,3 +120,53 @@
     <!--/.container-->
 
 </section>
+
+<div id="enquiry" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="color:white">{{enquirydata.name}} </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="single-tab-select-box">
+                            <h2>Name</h2>
+                            <div class="travel-check-number" style="margin-bottom: 20px;">
+                                <input type="text" class="form-control" name="name" [(ngModel)]="enquirydata.username" placeholder="Enter your name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="single-tab-select-box">
+                            <h2>Email</h2>
+                            <div class="travel-check-number" style="margin-bottom: 20px;">
+                                <input type="text" class="form-control" name="email" [(ngModel)]="enquirydata.email" placeholder="Enter your email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="single-tab-select-box">
+                            <h2>Contact Number</h2>
+                            <div class="travel-check-number" style="margin-bottom:20px;">
+                                <input type="text" class="form-control" name="number" [(ngModel)]="enquirydata.contact" placeholder="Enter your contact number">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div>
+                    <button class="bg-primary btn btn-md packages-btn " style="float: right;" data-dismiss="modal" (click)="sendenquiry()">
+                      Send Enquiry
+                  </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

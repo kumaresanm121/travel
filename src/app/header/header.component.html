@@ -1,5 +1,3 @@
-
-
 <!-- <form class="contact-form" (submit)="sendEmail($event)">
     <label>Name</label>
     <input type="text" name="user_name">
@@ -16,7 +14,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-2">
-                        <div class="logo" style="background-image: url('../../assets/images/logo/s2dlogo.png');">
+                        <div class="logo">
                             <a href="index.html">
                           S2D<span>Travel</span>
                       </a>
@@ -24,7 +22,9 @@
                         <!-- /.logo-->
                     </div>
                     <!-- /.col-->
+
                     <div class="col-sm-10">
+
                         <div class="main-menu">
 
                             <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,16 +37,32 @@
                             <!-- /.navbar-header-->
                             <div class="collapse navbar-collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li class="smooth-menu active"><a href="#home">home</a></li>
+                                    <li><a><i class="fa fa-envelope"> sd2travels@gmail.com</i></a></li>
+                                    <li><a><i class="fa fa-phone-square"> +91 9876543210</i></a></li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="smooth-menu active">
+                                        <a href="#home">home</a>
+                                    </li>
                                     <li class="smooth-menu"><a href="#gallery">Destination</a></li>
-                                    <li class="smooth-menu"><a href="#pack">Packages </a></li>
-                                  <!--   <li class="smooth-menu"><a href="#spo">Special Offers</a></li> -->
+                                    <!-- <li class="smooth-menu"><a href="#pack">Packages </a></li> -->
+                                    <li class="smooth-menu nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Packages
+                                        </a>
+                                        <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                                            <li style="padding: 0.2%;"><a href="#pack" style="color:black;margin-left: 15%;">Domestic </a></li>
+                                            <li style="padding: 0.2%;"><a href="#pack1" style="color:black;margin-left: 15%;">International </a></li>
+
+                                        </div>
+                                    </li>
+                                    <!--   <li class="smooth-menu"><a href="#spo">Special Offers</a></li> -->
                                     <!-- <li class="smooth-menu"><a href="#blog">blog</a></li>
                                     <li class="smooth-menu"><a href="#subs">subscription</a></li> -->
-                                    <li>
+                                    <!-- <li>
                                         <button class="book-btn">book now
                                   </button>
-                                    </li>
+                                    </li> -->
                                     <!--/.project-btn-->
                                 </ul>
                             </div>
@@ -66,4 +82,3 @@
     <!-- /.header-area -->
 
 </header>
-

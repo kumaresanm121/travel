@@ -2,285 +2,45 @@
     <div class="container">
         <div class="gallary-header text-center">
             <h2>
-                special packages
+                Domestic packages
             </h2>
-            <p>
+            <!-- <p>
                 Duis aute irure dolor in velit esse cillum dolore eu fugiat nulla.
-            </p>
+            </p> -->
         </div>
         <!--/.gallery-header-->
         <div class="packages-content">
             <div class="row">
-
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6" *ngFor="let dome of packages.domestic; index as i;">
                     <div class="single-package-item">
-                        <img src="./assets/images/packages/p1.jpg" alt="package-place">
+                        <img [src]="dome.img" alt="package-place">
                         <div class="single-package-item-txt">
-                            <h3>italy <span class="pull-right">$499</span></h3>
+                            <div *ngIf="dome.key=='MRK'">
+                                <h3>{{dome.name}} </h3>
+                            </div>
+                            <div *ngIf="dome.key!='MRK'">
+                                <h3>{{dome.name}} </h3><br>
+                            </div>
                             <div class="packages-para">
                                 <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i> 5 daays 6 nights
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> 5 star accomodation
+                                    <span><i class="fa fa-angle-right"></i> {{dome.time}}</span>
+                                    <i class="fa fa-angle-right"></i> {{dome.meal}}
                                 </p>
-                                <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i>  transportation
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> food facilities
-                                </p>
+                                <p><span><i class="fa fa-angle-right"></i>  {{dome.trans}}</span></p>
                             </div>
-                            <!--/.packages-para-->
-                            <div class="packages-review">
-                                <p>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span>2544 review</span>
-                                </p>
-                            </div>
-                            <!--/.packages-review-->
-                            <div class="about-btn">
-                                <button class="about-view packages-btn">
-                                  book now
+                            <div class="about-btn" *ngIf="dome.key!='MRK'">
+                                <button class="about-view packages-btn" data-toggle="modal" data-target="#enquiry" (click)="enquirydata = dome">
+                                  Enquiry Now
                               </button>
                             </div>
-                            <!--/.about-btn-->
-                        </div>
-                        <!--/.single-package-item-txt-->
-                    </div>
-                    <!--/.single-package-item-->
-
-                </div>
-                <!--/.col-->
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-package-item">
-                        <img src="./assets/images/packages/p2.jpg" alt="package-place">
-                        <div class="single-package-item-txt">
-                            <h3>england <span class="pull-right">$1499</span></h3>
-                            <div class="packages-para">
-                                <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i> 5 daays 6 nights
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> 5 star accomodation
-                                </p>
-                                <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i>  transportation
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> food facilities
-                                </p>
-                            </div>
-                            <!--/.packages-para-->
-                            <div class="packages-review">
-                                <p>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span>2544 review</span>
-                                </p>
-                            </div>
-                            <!--/.packages-review-->
-                            <div class="about-btn">
-                                <button class="about-view packages-btn">
-                                  book now
+                            <div class="about-btn" *ngIf="dome.key=='MRK'" style="margin-top: 10%;">
+                                <button class="about-view packages-btn" data-toggle="modal" data-target="#enquiry" (click)="enquirydata = dome">
+                                  Enquiry Now
                               </button>
                             </div>
-                            <!--/.about-btn-->
                         </div>
-                        <!--/.single-package-item-txt-->
                     </div>
-                    <!--/.single-package-item-->
-
                 </div>
-                <!--/.col-->
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-package-item">
-                        <img src="./assets/images/packages/p3.jpg" alt="package-place">
-                        <div class="single-package-item-txt">
-                            <h3>france <span class="pull-right">$1199</span></h3>
-                            <div class="packages-para">
-                                <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i> 5 daays 6 nights
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> 5 star accomodation
-                                </p>
-                                <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i>  transportation
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> food facilities
-                                </p>
-                            </div>
-                            <!--/.packages-para-->
-                            <div class="packages-review">
-                                <p>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span>2544 review</span>
-                                </p>
-                            </div>
-                            <!--/.packages-review-->
-                            <div class="about-btn">
-                                <button class="about-view packages-btn">
-                                  book now
-                              </button>
-                            </div>
-                            <!--/.about-btn-->
-                        </div>
-                        <!--/.single-package-item-txt-->
-                    </div>
-                    <!--/.single-package-item-->
-
-                </div>
-                <!--/.col-->
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-package-item">
-                        <img src="./assets/images/packages/p4.jpg" alt="package-place">
-                        <div class="single-package-item-txt">
-                            <h3>india <span class="pull-right">$799</span></h3>
-                            <div class="packages-para">
-                                <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i> 5 daays 6 nights
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> 5 star accomodation
-                                </p>
-                                <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i>  transportation
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> food facilities
-                                </p>
-                            </div>
-                            <!--/.packages-para-->
-                            <div class="packages-review">
-                                <p>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span>2544 review</span>
-                                </p>
-                            </div>
-                            <!--/.packages-review-->
-                            <div class="about-btn">
-                                <button class="about-view packages-btn">
-                                  book now
-                              </button>
-                            </div>
-                            <!--/.about-btn-->
-                        </div>
-                        <!--/.single-package-item-txt-->
-                    </div>
-                    <!--/.single-package-item-->
-
-                </div>
-                <!--/.col-->
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-package-item">
-                        <img src="./assets/images/packages/p5.jpg" alt="package-place">
-                        <div class="single-package-item-txt">
-                            <h3>spain <span class="pull-right">$999</span></h3>
-                            <div class="packages-para">
-                                <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i> 5 daays 6 nights
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> 5 star accomodation
-                                </p>
-                                <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i>  transportation
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> food facilities
-                                </p>
-                            </div>
-                            <!--/.packages-para-->
-                            <div class="packages-review">
-                                <p>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span>2544 review</span>
-                                </p>
-                            </div>
-                            <!--/.packages-review-->
-                            <div class="about-btn">
-                                <button class="about-view packages-btn">
-                                  book now
-                              </button>
-                            </div>
-                            <!--/.about-btn-->
-                        </div>
-                        <!--/.single-package-item-txt-->
-                    </div>
-                    <!--/.single-package-item-->
-
-                </div>
-                <!--/.col-->
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-package-item">
-                        <img src="./assets/images/packages/p6.jpg" alt="package-place">
-                        <div class="single-package-item-txt">
-                            <h3>thailand <span class="pull-right">$799</span></h3>
-                            <div class="packages-para">
-                                <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i> 5 daays 6 nights
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> 5 star accomodation
-                                </p>
-                                <p>
-                                    <span>
-                                      <i class="fa fa-angle-right"></i>  transportation
-                                  </span>
-                                    <i class="fa fa-angle-right"></i> food facilities
-                                </p>
-                            </div>
-                            <!--/.packages-para-->
-                            <div class="packages-review">
-                                <p>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span>2544 review</span>
-                                </p>
-                            </div>
-                            <!--/.packages-review-->
-                            <div class="about-btn">
-                                <button class="about-view packages-btn">
-                                  book now
-                              </button>
-                            </div>
-                            <!--/.about-btn-->
-                        </div>
-                        <!--/.single-package-item-txt-->
-                    </div>
-                    <!--/.single-package-item-->
-
-                </div>
-                <!--/.col-->
 
             </div>
             <!--/.row-->
@@ -290,3 +50,96 @@
     <!--/.container-->
 
 </section>
+<section id="pack1" class="packages">
+    <div class="container">
+        <div class="gallary-header text-center">
+            <h2>
+                International packages
+            </h2>
+            <!-- <p>
+                Duis aute irure dolor in velit esse cillum dolore eu fugiat nulla.
+            </p> -->
+        </div>
+        <!--/.gallery-header-->
+        <div class="packages-content">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6" *ngFor="let inter of packages.international; index as i;">
+                    <div class="single-package-item">
+                        <img [src]="inter.img" alt="package-place">
+                        <div class="single-package-item-txt">
+                            <h3>{{inter.name}} </h3><br>
+                            <div class="packages-para">
+                                <p>
+                                    <span><i class="fa fa-angle-right"></i> {{inter.meal}}</span>
+                                    <i class="fa fa-angle-right"></i> {{inter.trans}}
+                                </p>
+                                <!-- <p><span><i class="fa fa-angle-right"></i>  </span></p> -->
+                            </div>
+                            <div class="about-btn">
+                                <button class="about-view packages-btn" data-toggle="modal" data-target="#enquiry" (click)="enquirydata = inter">
+                                  Enquiry Now
+                              </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.packages-content-->
+    </div>
+    <!--/.container-->
+
+</section>
+
+<div id="enquiry" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="color:white">{{enquirydata.name}} </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="single-tab-select-box">
+                            <h2>Name</h2>
+                            <div class="travel-check-number" style="margin-bottom: 20px;">
+                                <input type="text" class="form-control" name="name" [(ngModel)]="enquirydata.username" placeholder="Enter your name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="single-tab-select-box">
+                            <h2>Email</h2>
+                            <div class="travel-check-number" style="margin-bottom: 20px;">
+                                <input type="text" class="form-control" name="email" [(ngModel)]="enquirydata.email" placeholder="Enter your email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="single-tab-select-box">
+                            <h2>Contact Number</h2>
+                            <div class="travel-check-number" style="margin-bottom:20px;">
+                                <input type="text" class="form-control" name="number" [(ngModel)]="enquirydata.contact" placeholder="Enter your contact number">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div>
+                    <button class="bg-primary btn btn-md packages-btn " style="float: right;" data-dismiss="modal" (click)="sendenquiry()">
+                      Send Enquiry
+                  </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
