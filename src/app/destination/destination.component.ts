@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class DestinationComponent implements OnInit {
 
   constructor() { }
+  enquirydata={name:"",email:"",contact:"",username:""};
 
+  sendenquiry(){
+    console.log("Enqiry")
+  }
   ngOnInit(): void {
   }
 
