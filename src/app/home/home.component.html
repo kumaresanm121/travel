@@ -13,10 +13,10 @@
             <div class="row">
                 <div class="col-sm-12 ">
                     <div class="single-about-us ">
-                        <div class="about-us-txt " style="margin-top: 5%">
+                        <div class="about-us-txt " style="margin-top: -15%">
                             <marquee>
                                 <h2 class="animated fadeInUp " style="opacity: 0; font-size:40px;">
-                                    Explore the Beauty of the Beautiful World
+                                    Explore the Beauty of Travel !!
                                 </h2>
                             </marquee>
                             <!--/.about-btn-->
@@ -25,10 +25,10 @@
                         <!--/.about-us-txt-->
                     </div>
                     <div class="about-btn ">
-                        <button class="about-view animated fadeInDown " style="float:right;opacity: 0; margin-top: 40%;margin-left: 29%">
+ <!--                        <button class="about-view animated fadeInDown " style="float:right;opacity: 0; margin-top: 40%;margin-left: 29%">
                           <a  href="#gallery " style="font-size: 16px;color:rgb(53, 4, 167) ">explore now</a>
                       </button>
-                    </div>
+  -->                   </div>
                     <!--/.single-about-us-->
                 </div>
                 <!--/.col-->
@@ -87,16 +87,16 @@
                                                 <div class="single-tab-select-box">
                                                     <h2>Name</h2>
                                                     <div class="travel-check-number" style="margin-bottom: 20px;">
-                                                        <input type="text" class="form-control" name="name" [(ngModel)]="carbook.name" placeholder="Enter your name">
+                                                        <input type="text" class="form-control" name="name" [(ngModel)]="bookingInfo.name" placeholder="Enter your name">
                                                     </div>
                                                     <!-- <div class="single-tab-select-box"> -->
                                                     <h2>Email</h2>
                                                     <div class="travel-check-number" style="margin-bottom: 20px;">
-                                                        <input type="text" class="form-control" name="email" [(ngModel)]="carbook.email" placeholder="Enter your email">
+                                                        <input type="text" class="form-control" name="email" [(ngModel)]="bookingInfo.email" placeholder="Enter your email">
                                                     </div>
                                                     <h2>Contact Number</h2>
                                                     <div class="travel-check-number" style="margin-bottom:20px;">
-                                                        <input type="text" class="form-control" name="number" [(ngModel)]="carbook.contact" placeholder="Enter your contact number">
+                                                        <input type="text" class="form-control" name="number" [(ngModel)]="bookingInfo.contact" placeholder="Enter your contact number">
 
                                                     </div>
                                                     <!-- </div> -->
@@ -106,7 +106,7 @@
                                                 <div class="col-sm-12 single-tab-select-box">
                                                     <h2>From</h2>
                                                     <div class="travel-select-icon">
-                                                        <select class="form-control " name="start" [(ngModel)]="carbook.start" placeholder="From">
+                                                        <select class="form-control " name="start" [(ngModel)]="bookingInfo.start" placeholder="From">
 
                                                             <option value=null>Enter your location</option>
 
@@ -118,14 +118,14 @@
                                                 <div class="col-sm-6 single-tab-select-box">
                                                     <h2>Start Date</h2>
                                                     <div class="travel-check-icon">
-                                                        <input type="text" name="checkin" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkin">
+                                                        <input type="text" name="checkin" class="form-control" data-toggle="datepicker" [(ngModel)]="bookingInfo.checkin">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 single-tab-select-box">
                                                     <h2>End Date</h2>
                                                     <div class=" travel-check-icon">
                                                         <form action="#">
-                                                            <input type="text" name="checkout" class="form-control" data-toggle="datepicker" [(ngModel)]="carbook.checkout">
+                                                            <input type="text" name="checkout" class="form-control" data-toggle="datepicker" [(ngModel)]="bookingInfo.checkout">
                                                         </form>
                                                     </div>
                                                 </div>
@@ -135,7 +135,7 @@
                                                 <div class="col-sm-12 single-tab-select-box">
                                                     <h2>To</h2>
                                                     <div class="travel-select-icon">
-                                                        <select class="form-control " name="end" [(ngModel)]="carbook.end" placeholder="To">
+                                                        <select class="form-control " name="end" [(ngModel)]="bookingInfo.end" placeholder="To">
 
                                                             <option value=null>Enter your destination location</option>
 
@@ -147,14 +147,14 @@
                                                 <div class="col-sm-6 single-tab-select-box">
                                                     <h2>Childs</h2>
                                                     <div class="travel-check-number">
-                                                        <input class="form-control" type="number" name="child" [(ngModel)]="carbook.child" placeholder="Number of childs">
+                                                        <input class="form-control" type="number" name="child" [(ngModel)]="bookingInfo.child" placeholder="Number of childs">
 
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 single-tab-select-box">
                                                     <h2>Adults</h2>
                                                     <div class="travel-check-number">
-                                                        <input class="form-control" type="number" name="adult" [(ngModel)]="carbook.adult" placeholder="Number of adults">
+                                                        <input class="form-control" type="number" name="adult" [(ngModel)]="bookingInfo.adult" placeholder="Number of adults">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12 single-tab-select-box" style="padding:0;">
@@ -182,7 +182,7 @@
                                                 <div class="single-tab-select-box">
                                                     <h2>Package Type</h2>
                                                     <div class="travel-select-icon">
-                                                        <select class="form-control " name="package" [(ngModel)]="tour.package" (ngModelChange)="packagefn(tour.package)" placeholder="From">
+                                                        <select class="form-control " name="package" [(ngModel)]="bookingInfo.package" (ngModelChange)="packagefn(bookingInfo.package)" placeholder="From">
 
                                                             <option value=null>Select your package</option>
 
@@ -195,25 +195,25 @@
                                                     </div>
                                                     <h2>Name</h2>
                                                     <div class="travel-check-number" style="margin-bottom: 20px;">
-                                                        <input type="text" class="form-control" name="name" [(ngModel)]="tour.name" placeholder="Enter your name">
+                                                        <input type="text" class="form-control" name="name" [(ngModel)]="bookingInfo.name" placeholder="Enter your name">
                                                     </div>
                                                     <h2>Email</h2>
                                                     <div class="travel-check-number" style="margin-bottom: 20px;">
-                                                        <input type="text" class="form-control" name="email" [(ngModel)]="tour.email" placeholder="ENter your email">
+                                                        <input type="text" class="form-control" name="email" [(ngModel)]="bookingInfo.email" placeholder="ENter your email">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-12">
-                                                <div class="col-sm-12 single-tab-select-box" *ngIf="tour.package=='custom'">
+                                                <div class="col-sm-12 single-tab-select-box" *ngIf="bookingInfo.package=='custom'">
                                                     <h2>From</h2>
                                                     <div class="travel-check-number" style="margin-bottom: 20px;">
-                                                        <input type="text" class="form-control" name="start" [(ngModel)]="tour.start" placeholder="Enter your Location">
+                                                        <input type="text" class="form-control" name="start" [(ngModel)]="bookingInfo.start" placeholder="Enter your Location">
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-12 single-tab-select-box" *ngIf="tour.package!='custom'">
+                                                <div class="col-sm-12 single-tab-select-box" *ngIf="bookingInfo.package!='custom'">
                                                     <h2>From</h2>
                                                     <div class="travel-select-icon">
-                                                        <select class="form-control" name="start" [(ngModel)]="tour.start" placeholder="From">
+                                                        <select class="form-control" name="start" [(ngModel)]="bookingInfo.start" placeholder="From">
 
                                                             <option value=null>Enter your location</option>
 
@@ -224,36 +224,36 @@
                                                 <div class="col-sm-6 single-tab-select-box">
                                                     <h2>Start Date</h2>
                                                     <div class="travel-check-icon">
-                                                        <input type="text" name="checkin" class="form-control" data-toggle="datepicker" [(ngModel)]="tour.checkin">
+                                                        <input type="text" name="checkin" class="form-control" data-toggle="datepicker" [(ngModel)]="bookingInfo.checkin">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 single-tab-select-box">
                                                     <h2>End Date</h2>
                                                     <div class=" travel-check-icon">
                                                         <form action="#">
-                                                            <input type="text" name="checkout" class="form-control" data-toggle="datepicker" [(ngModel)]="tour.checkout">
+                                                            <input type="text" name="checkout" class="form-control" data-toggle="datepicker" [(ngModel)]="bookingInfo.checkout">
                                                         </form>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12 single-tab-select-box">
                                                     <h2>Contact Number</h2>
                                                     <div class="travel-check-number" style="margin-bottom: 20px;">
-                                                        <input type="text" class="form-control" name="contact" [(ngModel)]="tour.contact" placeholder="Enter your contact number">
+                                                        <input type="text" class="form-control" name="contact" [(ngModel)]="bookingInfo.contact" placeholder="Enter your contact number">
                                                     </div>
                                                 </div>
 
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-12">
-                                                <div class="col-sm-12 single-tab-select-box" *ngIf="tour.package=='custom'">
+                                                <div class="col-sm-12 single-tab-select-box" *ngIf="bookingInfo.package=='custom'">
                                                     <h2>To</h2>
                                                     <div class="travel-check-number" style="margin-bottom: 20px;">
-                                                        <input type="text" class="form-control" name="end" [(ngModel)]="tour.end" placeholder="Enter your destination Location">
+                                                        <input type="text" class="form-control" name="end" [(ngModel)]="bookingInfo.end" placeholder="Enter your destination Location">
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-12 single-tab-select-box" *ngIf="tour.package!='custom'">
+                                                <div class="col-sm-12 single-tab-select-box" *ngIf="bookingInfo.package!='custom'">
                                                     <h2>To</h2>
                                                     <div class="travel-select-icon">
-                                                        <select class="form-control " name="end" [(ngModel)]="tour.end" placeholder="To">
+                                                        <select class="form-control " name="end" [(ngModel)]="bookingInfo.end" placeholder="To">
 
                                                             <option value=null>Enter your destination location</option>
 
@@ -265,14 +265,14 @@
                                                 <div class="col-sm-6 single-tab-select-box">
                                                     <h2>Childs</h2>
                                                     <div class="travel-check-number">
-                                                        <input class="form-control" type="number" name="child" [(ngModel)]="tour.child" placeholder="Number of childs">
+                                                        <input class="form-control" type="number" name="child" [(ngModel)]="bookingInfo.child" placeholder="Number of childs">
 
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 single-tab-select-box">
                                                     <h2>Adults</h2>
                                                     <div class="travel-check-number">
-                                                        <input class="form-control" type="number" name="adult" [(ngModel)]="tour.adult" placeholder="Number of adults">
+                                                        <input class="form-control" type="number" name="adult" [(ngModel)]="bookingInfo.adult" placeholder="Number of adults">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12 single-tab-select-box" style="padding:0;">
