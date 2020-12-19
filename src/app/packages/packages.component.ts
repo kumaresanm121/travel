@@ -26,7 +26,7 @@ international:[
       ,{"img":"./assets/images/gallary/international/Singapore_370_320.png","key":"SPR","name":"Singapore","meal":"Food Fecilities","trans":"transport","time":"1 Nights 2 Days"} 
       ,{"img":"./assets/images/gallary/international/Thailand_370_320.png","key":"TLD","name":"Thailand","meal":"Food Fecilities","trans":"transport","time":"1 Nights 2 Days"}]}
 
-enquirydata={name:"",email:"",contact:"",username:""};
+enquirydata={name:"",email:"",contact:"",username:"",destination:""};
 
 sendenquiry(){
   console.log("Enqiry")
