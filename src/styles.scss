@@ -163,7 +163,7 @@ body {
 .is-sticky .header-area:after {
     position: absolute;
     content: '';
-    background: rgba(77, 78, 84, 1);
+    background: #24346c;
     height: 100%;
     width: 100%;
     top: 0;
@@ -199,7 +199,7 @@ body {
 }
 
 .logo a span {
-    color: #00d8ff;
+    color: #eed514;
     text-transform: capitalize;
 }
 
@@ -244,7 +244,7 @@ body {
 .main-menu .nav li.active a,
 .main-menu .nav li a:hover,
 .main-menu .nav li a:focus {
-    color: #00d8ff;
+    color: #eed514;
     background-color: transparent;
 }
 
@@ -265,7 +265,7 @@ body {
 
 .main-menu .nav li.active a:before,
 .main-menu .nav a:hover:before {
-    background: #00d8ff;
+    background: #eed514;
     width: 100%;
 }
 
@@ -283,7 +283,7 @@ body {
 }
 
 .main-menu .navbar-toggle {
-    color: #00d8ff;
+    color: #24346c;
 }
 
 .main-menu .navbar-default .navbar-toggle:focus,
@@ -299,8 +299,8 @@ body {
 /*book-btn*/
 
 .book-btn {
-    background: #00d8ff;
-    border: 1px solid #00d8ff;
+    background: #24346c;
+    border: 1px solid #24346c;
     width: 120px;
     height: 40px;
     white-space: nowrap;
@@ -387,8 +387,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #00d8ff;
-    border: 1px solid #00d8ff;
+    background: #24346c;
+    border: 1px solid #24346c;
     width: 200px;
     height: 60px;
     white-space: nowrap;
@@ -448,7 +448,7 @@ body {
 
 .desc-tabs .nav-tabs>li.active>a {
     color: #fff;
-    background: #00d8ff;
+    background: #24346c;
     cursor: default;
     font-size: 20px;
     font-weight: 500;
@@ -469,7 +469,7 @@ body {
 
 .desc-tabs .nav-tabs>li>a {
     color: #fff;
-    background: #00d8ff;
+    background: #24346c;
     cursor: default;
     font-size: 20px;
     font-weight: 500;
@@ -656,7 +656,7 @@ body {
 }
 
 .single-trip-circle input[type="radio"]:checked+label span.round-boarder1 {
-    background-color: #00d8ff;
+    background-color: #24346c;
 }
 
 .single-trip-circle input[type="radio"]+label span.round-boarder1,
@@ -699,8 +699,8 @@ body {
 }
 
 .price_filter .ui-slider-handle.ui-state-default.ui-corner-all {
-    background: #00d8ff none repeat scroll 0 0;
-    border: 0px solid #00d8ff;
+    background: #24346c none repeat scroll 0 0;
+    border: 0px solid #24346c;
     border-radius: 50%;
     height: 12px;
     width: 12px;
@@ -710,7 +710,7 @@ body {
 }
 
 .price_filter .ui-slider-range {
-    background: #00d8ff none repeat scroll 0 0;
+    background: #24346c none repeat scroll 0 0;
 }
 
 .price_slider_amount>input[type="text"] {
@@ -1206,7 +1206,7 @@ body {
 }
 
 .testemonial .owl-theme .owl-dots .owl-dot.active span {
-    background: #00d8ff;
+    background: #24346c;
 }
 
 
@@ -1230,7 +1230,7 @@ body {
 
 .home1-testm-txt h3 a {
     display: block;
-    color: #00d8ff;
+    color: #24346c;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -1620,7 +1620,7 @@ body {
 /*appsLand-btn*/
 
 .appsLand-btn {
-    background: #00d8ff;
+    background: #24346c;
     display: inline-block;
     padding: 17px 54px;
     text-decoration: none;
@@ -1653,7 +1653,7 @@ body {
 
 .appsLand-btn:hover {
     box-shadow: 0 3px 25px rgba(2, 3, 3, 0.25);
-    background: #00d8ff;
+    background: #24346c;
 }
 
 .appsLand-btn.appsLand-btn-larg {
@@ -1721,7 +1721,7 @@ body {
 }
 
 .footer-logo a>span {
-    color: #00d8ff;
+    color: #24346c;
     text-transform: capitalize;
 }
 
@@ -1758,7 +1758,7 @@ body {
     -ms-transition: scaleX(1.2);
     -o-transition: scaleX(1.2);
     transform: scaleX(1.2);
-    color: #00d8ff;
+    color: #24346c;
 }
 
 
@@ -1833,7 +1833,7 @@ body {
 .foot-icons p a,
 .foot-icons p a:hover,
 .foot-icons p a:focus {
-    color: #00d8ff;
+    color: #24346c;
     font-size: 16px;
     margin-top: 28px;
 }
@@ -1858,8 +1858,8 @@ body {
     font-size: 30px;
     z-index: 15;
     color: #fff;
-    background: #00d8ff;
-    border: 1px solid #00d8ff;
+    background: #24346c;
+    border: 1px solid #24346c;
     border-radius: 5px;
     -webkit-transition: .5s;
     -moz-transition: .5s;
